@@ -19,7 +19,7 @@ st.markdown(
 )
 
 # --- Then generate scramble on click ---
-if st.button("Generate Scramble (fallback)"):  # fallback if you want normal button
+if st.button("Generate Scramble"):  # fallback if you want normal button
     scramble_str = mega.scramble(length)
     st.markdown(
         f"<div style='font-family:monospace; font-size:20px; white-space:pre'>{scramble_str}</div>", 
