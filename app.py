@@ -6,26 +6,13 @@ st.title("Megaminx S2L Scrambler")
 
 length = st.number_input("Scramble length", min_value=1, value=49)
 
-st.markdown(
-    """
-    <style>
-    div.stButton {
-        display: flex;
-        justify-content: center;
-    }
-    div.stButton > button {
-        padding: 25px 50px;
-        border-radius: 12px;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
+# --- Create 3 columns: left, center, right ---
+col1, col2, col3 = st.columns([1,2,1])  # middle column is wider
 
-# --- Then generate scramble on click ---
-if st.button("Generate Scramble"):  # fallback if you want normal button
+# Place button in the middle column
+if col2.button("Generate Scramble"):
     scramble_str = mega.scramble(length)
     st.markdown(
-        f"<div style='font-family:monospace; font-size:20px; white-space:pre'>{scramble_str}</div>", 
+        f"<div style='font-family:monospace; font-size:20px; white-space:pre'>{scramble_str}</div>",
         unsafe_allow_html=True
     )
