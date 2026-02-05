@@ -39,7 +39,7 @@ def scramble(n=49):
         a = f + m
         a += " " * (4 - len(a))
 
-        if i % 14 == 0:
+        if i % 12 == 0:
             res += " " + a + "\n"
         else:
             res += " " + a
