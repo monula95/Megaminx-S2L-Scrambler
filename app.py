@@ -2,10 +2,12 @@ import streamlit as st
 import mega
 
 st.set_page_config(page_title="Megaminx S2L Scrambler")
-
 st.title("Megaminx S2L Scrambler")
 
 length = st.number_input("Scramble length", min_value=1, value=49)
 
 if st.button("Generate Scramble"):
-    st.text_area(mega.scramble(length))
+    scramble_str = mega.scramble(length)
+    
+    # Display as preformatted code in Markdown
+    st.markdown(f"<pre style='font-family: monospace; font-size:16px'>{scramble_str}</pre>", unsafe_allow_html=True)
