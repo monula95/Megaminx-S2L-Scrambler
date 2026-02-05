@@ -6,19 +6,14 @@ st.title("Megaminx S2L Scrambler")
 
 length = st.number_input("Scramble length", min_value=1, value=49)
 
-# --- Custom large button using HTML ---
-clicked = st.markdown(
+st.markdown(
     """
-    <form action="#" method="POST">
-        <button type="submit" style="
-            font-size: 30px;
-            padding: 20px 40px;
-            border-radius: 12px;
-            background-color:#4CAF50;
-            color:white;
-            font-weight:bold;
-        ">Generate Scramble</button>
-    </form>
+    <style>
+    div.stButton > button {
+        padding: 25px 50px;   /* big button area */
+        border-radius: 12px;
+    }
+    </style>
     """,
     unsafe_allow_html=True
 )
