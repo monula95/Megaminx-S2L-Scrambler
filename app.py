@@ -23,10 +23,10 @@ st.markdown(
 )
 
 # --- Create 3 columns: left, center, right ---
-col1, col2, col3 = st.columns([1,2,1])  # middle column is wider
+_, _, col3, _, _ = st.columns([1,1,1,1,1])  # middle column is wider
 
 # Place button in the middle column
-if col2.button("Generate Scramble"):
+if col3.button("Generate Scramble"):
     scramble_str = mega.scramble(length)
     st.markdown(
         f"<div style='font-family:monospace; font-size:20px; white-space:pre'>{scramble_str}</div>",
