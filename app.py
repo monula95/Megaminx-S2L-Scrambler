@@ -12,4 +12,4 @@ if st.button("Generate Scramble"):
     # Replace newlines with <br> so HTML renders them
     scramble_html = scramble_str.replace("\n", "<br>")
     
-    st.markdown(f"<pre style='font-family: monospace; font-size:16px'>{scramble_html}</pre>", unsafe_allow_html=True)
+    st.markdown(f"<pre style='font-family: monospace; font-size:25px'>{scramble_html}</pre>", unsafe_allow_html=True)
