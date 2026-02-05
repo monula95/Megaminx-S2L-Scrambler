@@ -1,36 +1,11 @@
-from flask import Flask, jsonify
+import streamlit as st
 import mega
 
-app = Flask(__name__)
+st.set_page_config(page_title="Megaminx S2L Scrambler")
 
-@app.route("/")
-def home():
-    return """
-    <html>
-        <head>
-            <title>Megaminx S2L Scrambler</title>
-        </head>
-        <body style="font-family: monospace;">
-            <h1>Megaminx S2L Scrambler</h1>
-            <button onclick="generate()">Generate Scramble</button>
-            <pre id="output"></pre>
+st.title("Megaminx S2L Scrambler")
 
-            <script>
-                async function generate() {
-                    const res = await fetch('/scramble');
-                    const data = await res.json();
-                    document.getElementById('output').textContent = data.scramble;
-                }
-            </script>
-        </body>
-    </html>
-    """
+length = st.number_input("Scramble length", min_value=1, value=49)
 
-@app.route("/scramble")
-def get_scramble():
-    return jsonify({
-        "scramble": mega.scramble(49)
-    })
-
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=3000)
+if st.button("Generate Scramble"):
+    st.code(mega.scramble(length))
