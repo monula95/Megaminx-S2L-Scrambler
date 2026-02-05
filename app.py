@@ -6,30 +6,27 @@ st.title("Megaminx S2L Scrambler")
 
 length = st.number_input("Scramble length", min_value=1, value=49)
 
-st.markdown(
+# --- Custom large button using HTML ---
+clicked = st.markdown(
     """
-    <style>
-    /* Make all buttons bigger */
-    div.stButton > button {
-        padding: 15px 30px;     /* Taller/wider button */
-        border-radius: 10px;    /* Rounded corners */
-    }
-
-    /* Make the text inside buttons bigger */
-    div.stButton > button > span {
-        font-size: 20px !important;  /* Increase font-size */
-        font-weight: bold;            /* Optional: make text bold */
-    }
-    </style>
+    <form action="#" method="POST">
+        <button type="submit" style="
+            font-size: 30px;
+            padding: 20px 40px;
+            border-radius: 12px;
+            background-color:#4CAF50;
+            color:white;
+            font-weight:bold;
+        ">Generate Scramble</button>
+    </form>
     """,
     unsafe_allow_html=True
 )
 
-
-if st.button("Generate Scramble"):
+# --- Then generate scramble on click ---
+if st.button("Generate Scramble (fallback)"):  # fallback if you want normal button
     scramble_str = mega.scramble(length)
-    
     st.markdown(
-        f"<div style='font-family:monospace; font-size:30px; white-space:pre'>{scramble_str}</div>", 
+        f"<div style='font-family:monospace; font-size:20px; white-space:pre'>{scramble_str}</div>", 
         unsafe_allow_html=True
     )
