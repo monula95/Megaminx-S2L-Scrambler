@@ -9,8 +9,12 @@ length = st.number_input("Scramble length", min_value=1, value=49)
 st.markdown(
     """
     <style>
+    div.stButton {
+        display: flex;
+        justify-content: center;
+    }
     div.stButton > button {
-        padding: 25px 50px;   /* big button area */
+        padding: 25px 50px;
         border-radius: 12px;
     }
     </style>
