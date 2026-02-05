@@ -11,14 +11,20 @@ st.markdown(
     <style>
     /* Make all buttons bigger */
     div.stButton > button {
-        font-size: 30px;       /* Bigger text */
-        padding: 30px 50px;    /* More padding top/bottom and left/right */
-        border-radius: 10px;   /* Rounded corners, optional */
+        padding: 15px 30px;     /* Taller/wider button */
+        border-radius: 10px;    /* Rounded corners */
+    }
+
+    /* Make the text inside buttons bigger */
+    div.stButton > button > span {
+        font-size: 20px !important;  /* Increase font-size */
+        font-weight: bold;            /* Optional: make text bold */
     }
     </style>
     """,
     unsafe_allow_html=True
 )
+
 
 if st.button("Generate Scramble"):
     scramble_str = mega.scramble(length)
