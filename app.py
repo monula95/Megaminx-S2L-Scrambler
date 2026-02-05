@@ -11,7 +11,7 @@ st.markdown(
     <style>
     /* Make all buttons bigger */
     div.stButton > button {
-        font-size: 20px;       /* Bigger text */
+        font-size: 30px;       /* Bigger text */
         padding: 30px 50px;    /* More padding top/bottom and left/right */
         border-radius: 10px;   /* Rounded corners, optional */
     }
