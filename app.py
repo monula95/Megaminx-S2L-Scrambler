@@ -8,4 +8,4 @@ st.title("Megaminx S2L Scrambler")
 length = st.number_input("Scramble length", min_value=1, value=49)
 
 if st.button("Generate Scramble"):
-    st.code(mega.scramble(length))
+    st.text(mega.scramble(length))
