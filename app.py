@@ -23,7 +23,7 @@ st.markdown(
 )
 
 # --- Create 3 columns: left, center, right ---
-_, _, col3, _, _ = st.columns([1,1,1,1,1])  # middle column is wider
+_, _, col3, _, _ = st.columns([1,1,2,1,1])  # middle column is wider
 
 # Place button in the middle column
 if col3.button("Generate Scramble"):
