@@ -6,6 +6,20 @@ st.title("Megaminx S2L Scrambler")
 
 length = st.number_input("Scramble length", min_value=1, value=49)
 
+st.markdown(
+    """
+    <style>
+    /* Make all buttons bigger */
+    div.stButton > button {
+        font-size: 20px;       /* Bigger text */
+        padding: 15px 30px;    /* More padding top/bottom and left/right */
+        border-radius: 10px;   /* Rounded corners, optional */
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 if st.button("Generate Scramble"):
     scramble_str = mega.scramble(length)
     
