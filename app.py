@@ -6,6 +6,22 @@ st.title("Megaminx S2L Scrambler")
 
 length = st.number_input("Scramble length", min_value=1, value=49)
 
+st.markdown(
+    """
+    <style>
+    div.stButton {
+        display: flex;
+        justify-content: center;
+    }
+    div.stButton > button {
+        padding: 25px 50px;
+        border-radius: 12px;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 # --- Create 3 columns: left, center, right ---
 col1, col2, col3 = st.columns([1,2,1])  # middle column is wider
 
