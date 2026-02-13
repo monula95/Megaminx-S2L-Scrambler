@@ -1,5 +1,5 @@
 import streamlit as st
-import mega
+import s2l
 
 # --- Page config ---
 st.set_page_config(page_title="Megaminx Scrambler")
@@ -36,7 +36,7 @@ def s2l_page():
     # Center the button using columns
     _, col2, _ = st.columns([1,2,1])
     if col2.button("Generate S2L Scramble"):
-        scramble_str = mega.scramble(length)
+        scramble_str = s2l.scramble(length)
         st.markdown(
             f"<div style='font-family:monospace; font-size:20px; white-space:pre'>{scramble_str}</div>",
             unsafe_allow_html=True
