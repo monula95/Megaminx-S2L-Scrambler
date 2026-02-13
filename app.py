@@ -1,5 +1,6 @@
 import streamlit as st
 import s2l
+import lasts2lface
 
 # --- Page config ---
 st.set_page_config(page_title="Megaminx Scrambler")
@@ -9,7 +10,7 @@ st.title("Megaminx Scrambler")
 # --- Dropdown to choose scrambler ---
 scrambler_type = st.selectbox(
     "Choose Scrambler",
-    ["S2L Scrambler", "Full Scrambler"]
+    ["S2L Scrambler", "Last Face of S2L + Last Layer"]
 )
 
 # --- CSS for centered, large buttons ---
@@ -43,11 +44,19 @@ def s2l_page():
         )
 
 # --- Define full scrambler page ---
-def full_scrambler_page():
-    st.write("Full scrambler coming soon...")
+def last_s2l_face_page():
+    length = st.number_input("Approximate scramble length", min_value=1, value=36)
 
+    # Center the button using columns
+    _, col2, _ = st.columns([1,2,1])
+    if col2.button("Generate last S2L face scramble"):
+        scramble_str = lasts2lface.scramble(length)
+        st.markdown(
+            f"<div style='font-family:monospace; font-size:20px; white-space:pre'>{scramble_str}</div>",
+            unsafe_allow_html=True
+        )
 # --- Render the page based on selection ---
 if scrambler_type == "S2L Scrambler":
     s2l_page()
 else:
-    full_scrambler_page()
+    last_s2l_face_page()
